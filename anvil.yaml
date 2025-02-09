@@ -31,6 +31,23 @@ db_schema:
       type: string
     server: full
     title: expenses
+  liczniki:
+    client: none
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: data
+      type: date
+    - admin_ui: {order: 1, width: 200}
+      name: lokal
+      type: number
+    - admin_ui: {order: 2, width: 200}
+      name: stan
+      type: number
+    - admin_ui: {order: 3, width: 200}
+      name: url
+      type: string
+    server: full
+    title: liczniki
   users:
     client: full
     columns:
@@ -72,7 +89,7 @@ db_schema:
 dependencies: []
 name: Expense Approval App
 native_deps:
-  head_html: |-
+  head_html: |
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fleur+De+Leah&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat+Underline:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -92,8 +109,6 @@ services:
 - client_config: {}
   server_config: {}
   source: /runtime/services/google.yml
-- client_config: {}
-  server_config: {}
-  source: /runtime/services/anvil/email.yml
 startup: {module: Login, type: form}
 startup_form: null
+uplink_visible: true

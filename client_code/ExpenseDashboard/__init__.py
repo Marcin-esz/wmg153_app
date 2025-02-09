@@ -22,6 +22,6 @@ class ExpenseDashboard(ExpenseDashboardTemplate):
   def new_expense_click(self, **event_args):
     """This method is called when the button is clicked"""
     expense = {}
-    if alert(AddExpense(item=expense), large=True, buttons=None):
+    if alert(Dodaj(item=expense), large=True, buttons=None):
       anvil.server.call('add_expense', expense)
       self.rp.items = anvil.server.call('get_user_expenses')

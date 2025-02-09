@@ -51,6 +51,12 @@ body {
   padding-bottom: 0;
 }
 
+.anvil-role-user-name {
+  font-size: 100px;
+  line-height: 28px;
+  font-weight: 400;
+}
+
 a {
   color: %color:Primary%;
 }
