@@ -32,7 +32,7 @@ db_schema:
     server: full
     title: expenses
   users:
-    client: none
+    client: full
     columns:
     - admin_ui: {width: 200}
       name: email
@@ -61,11 +61,21 @@ db_schema:
     - admin_ui: {width: 200}
       name: role
       type: string
+    - admin_ui: {order: 9, width: 200}
+      name: remembered_logins
+      type: simpleObject
+    - admin_ui: {order: 10, width: 200}
+      name: name
+      type: string
     server: full
     title: Users
 dependencies: []
 name: Expense Approval App
-native_deps: {head_html: '<link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;600&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet" rel="preload" as="font" crossorigin="anonymous">'}
+native_deps:
+  head_html: |-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fleur+De+Leah&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat+Underline:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 package_name: Rally_theme
 runtime_options:
   client_version: '3'
@@ -76,7 +86,7 @@ services:
 - client_config: {enable_v2: true}
   server_config: {}
   source: /runtime/services/tables.yml
-- client_config: {allow_signup: true, confirm_email: true, enable_automatically: true, use_email: true, use_google: true}
+- client_config: {allow_remember_me: true, allow_signup: true, confirm_email: true, enable_automatically: true, remember_me_days: 30, require_secure_passwords: false, use_email: true, use_google: true}
   server_config: {user_table: users}
   source: /runtime/services/anvil/users.yml
 - client_config: {}

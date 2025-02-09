@@ -1,4 +1,4 @@
-from ._anvil_designer import SummaryPlotsTemplate
+from ._anvil_designer import WykresyTemplate
 from anvil import *
 import plotly.graph_objects as go
 import anvil.server
@@ -11,7 +11,7 @@ from anvil.tables import app_tables
 
 Plot.templates["default"] = "rally"
 
-class SummaryPlots(SummaryPlotsTemplate):
+class Wykresy(WykresyTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)

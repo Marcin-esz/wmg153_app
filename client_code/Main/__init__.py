@@ -10,7 +10,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 from .. import State
 from ..ExpenseDashboard import ExpenseDashboard
-from ..SummaryPlots import SummaryPlots
+from ..Wykresy import Wykresy
 
 class Main(MainTemplate):
   def __init__(self, **properties):
@@ -48,6 +48,23 @@ class Main(MainTemplate):
     """This method is called when the button is clicked"""
     self.content_panel.clear()
     self.content_panel.add_component(SummaryPlots())
+
+  def userLabel_show(self, **event_args):
+    # Pobierz bieżącego użytkownika
+    user = anvil.users.get_user()
+    
+    # Sprawdź, czy użytkownik jest zalogowany i posiada atrybut 'name'
+    if user is not None and 'name' in user:
+        # Przypisz nazwę użytkownika do etykiety
+        self.userLabel.text = user['name']
+    else:
+        # Ustaw wartość domyślną, jeśli użytkownik nie jest zalogowany lub nie ma zdefiniowanej nazwy
+        self.userLabel.text = "Nieznany użytkownik"
+
+    
+
+
+    
   
 
 
