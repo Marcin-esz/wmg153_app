@@ -1,5 +1,9 @@
 components:
-- components: []
+- components:
+  - layout_properties: {grid_position: 'VWBWDK,QSMNOJ'}
+    name: date_picker_1
+    properties: {enabled: true, format: YYYY-MM-DD, pick_time: true}
+    type: DatePicker
   layout_properties: {slot: default}
   name: content_panel
   properties: {col_widths: '{}'}
