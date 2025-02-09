@@ -47,7 +47,7 @@ class Main(MainTemplate):
   def summary_btn_click(self, **event_args):
     """This method is called when the button is clicked"""
     self.content_panel.clear()
-    self.content_panel.add_component(SummaryPlots())
+    self.content_panel.add_component(Wykresy())
 
   def userLabel_show(self, **event_args):
     # Pobierz bieżącego użytkownika
@@ -59,7 +59,7 @@ class Main(MainTemplate):
         self.userLabel.text = user['name']
     else:
         # Ustaw wartość domyślną, jeśli użytkownik nie jest zalogowany lub nie ma zdefiniowanej nazwy
-        self.userLabel.text = "Nieznany użytkownik"
+        self.userLabel.text = " "
 
     
 

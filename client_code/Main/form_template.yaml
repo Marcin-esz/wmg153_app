@@ -5,17 +5,17 @@ components:
   properties: {col_widths: '{}'}
   type: ColumnPanel
 - components:
+  - layout_properties: {full_width_row: false, grid_position: 'OMSSRV,RYYAMZ', row_background: ''}
+    name: label_1
+    properties: {font_size: 30, icon: 'fa:user-circle', role: headline, spacing_above: small, spacing_below: small}
+    type: Label
   - data_bindings:
     - {code: '', property: text, writeback: false}
     event_bindings: {show: userLabel_show}
-    layout_properties: {grid_position: 'COGPIV,LNRYLG'}
+    layout_properties: {grid_position: 'OMSSRV,EQZZGN'}
     name: userLabel
-    properties: {bold: true, font: Fleur De Leah, font_size: 20, icon: 'fa:user-o', spacing_above: none, spacing_below: medium}
+    properties: {bold: true, font: Fleur De Leah, font_size: 40, icon: '', role: headline, spacing_above: none, spacing_below: medium}
     type: Label
-  - layout_properties: {grid_position: 'KYGCFT,GNLMGH'}
-    name: repeating_panel_1
-    properties: {item_template: Main.ItemTemplate1}
-    type: RepeatingPanel
   - event_bindings: {click: log_out_click}
     layout_properties: {grid_position: 'FTKWEF,HEDJQF'}
     name: log_out
@@ -57,7 +57,7 @@ components:
     type: Button
   layout_properties: {slot: left-nav}
   name: column_panel_2
-  properties: {col_widths: '{}'}
+  properties: {col_widths: '{"RYYAMZ":10,"EQZZGN":50}', spacing_above: none}
   type: ColumnPanel
 - data_bindings:
   - {code: '80', property: height, writeback: false}
